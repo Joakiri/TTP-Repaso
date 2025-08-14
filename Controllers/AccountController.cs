@@ -10,13 +10,25 @@ public class HomeController : Controller
 
     public IActionResult logIn()
     {
-        return View();
+        return View("LogIn", "Account"); 
     }
     
     [HttpPost]
     public IActionResult saveLogIn()
-    {
-        return View();  
+    { 
+        Usuario usuario = BD.searchUsuario(username, password);
+        if (usuario != null)
+        {
+            HttpContext.Session.SetString("IdUsuario", usuario.Id.ToString());
+            BD.ActualizarUltimoLogin(usuario.Id);
+            return RedirectToAction("Index", "Home");
+        }
+        else{
+            ViewBag.Mensaje = "Usuario o contraseña incorrectos.";
+        }
+        
+        return View("Login");
+
     }
     
     public IActionResult Index()
@@ -29,7 +41,7 @@ public class HomeController : Controller
     }
     public IActionResult signIn()
     {
-        return View();
+        return View("Account", "SignIn");
     }
     
     [HttpPost]

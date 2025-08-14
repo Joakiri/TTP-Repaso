@@ -1,0 +1,7 @@
+<form action = '@Url.Action("saveLogIn", "Account")' method = "POST">
+    <input type="string" name="user" placeholder="Ingrese su usuario"/><br/>
+    <input type="string" name="password" placeholder="Ingrese su contraseña"/><br/>
+    <input type="submit" value="Mandar">
+</form>
+
+<a href='@Url.Action("signIn", "Account")'> ¿No tienes cuenta?  </a>
