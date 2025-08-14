@@ -8,8 +8,7 @@ public class Usuario
     public DateTime UltimoLogin {get; private set;}
     public string Password {get; private set;}
 
-    public Usuario(int ID, string Nombre, string Apellido, string Foto, string Username, DateTime UltimoLogin, string Password){
-        this.ID = ID;
+    public Usuario( string Nombre, string Apellido, string Foto, string Username, DateTime UltimoLogin, string Password){
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Foto = Foto;

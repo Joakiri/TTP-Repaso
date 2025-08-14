@@ -1,15 +1,16 @@
 <section class = signin>
 
 <h3>Ingrese sus datos</h3>
-<div>
 <form action = '@Url.Action("saveSignIn", "Account")' method = "POST">
-  Ingrese su nombre:<input type="string" name="name" placeholder="Ingrese su nombre"/><br/>
-  Ingrese su apellido:<input type="string" name="surname" placeholder="Ingrese su apellido"/><br/>
-  Ingrese su username:<input type="string" name="username" placeholder="Ingrese su userName"/><br/>
-  Ingrese su contraseña: <input type="string" name="password" placeholder="Ingrese su contraseña"/><br/>
-  Ingrese su foto:<input type="image" name="photo" placeholder="Ingrese su foto"><br/>
+  Ingrese su nombre:<input type="string" name="name" /><br/>
+  Ingrese su apellido:<input type="string" name="surname" /><br/>
+  Ingrese su username:<input type="string" name="username"/><br/>
+  Ingrese su contraseña: <input type="string" name="password" /><br/>
+  Ingrese su foto:<input type="image" name="photo" ><br/>
 </form>
 
-<a href='@Url.Action("LogIn", "Account")'> ¿Ya tienes cuenta? </a>
-
+<a href='@Url.Action("LogIn", "Account")'> ¿YA TIENES CUENTA? TOQUE AQUI</a>
+@if(ViewBag.message != ""){
+  <h2>ViewBag.message</h2>
+}
 </section>

@@ -1,7 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
-
+<section class = index >
 <div>
-    <p>Bienvenido/a a tu lista de tarea</p>
+    <h1>Bienvenido/a a tu lista de tareas</h1>
 </div>
+
+<a href='@Url.Action("logIn", "Account")'> INICIAR SESION </a>
+
+<a href='@Url.Action("signIn", "Account")'> REGISTRARSE </a>
+</section>
+
+

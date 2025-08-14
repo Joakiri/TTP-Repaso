@@ -17,10 +17,19 @@ public static Usuario searchUsuario(string username, string password){
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = "SELECT * FROM Usuarios WHERE Username = @Username AND Password = @Password";
-            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { Username = username, Password = password });
+            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { Username = username, Password = password});
         }
         return usuario;
     }  
+    public static bool searchUsername(string username)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT * FROM Usuarios WHERE Username = @Username";
+            Usuario usuario = connection.QueryFirstOrDefault<Usuario>(query, new { Username = username });
+            return usuario == null;
+        }
+    }
 
 public static Usuario LogIn(string Username, string Password)
 {

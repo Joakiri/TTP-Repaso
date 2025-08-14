@@ -10,7 +10,7 @@ public class AccountController : Controller
 
     public IActionResult logIn()
     {
-        return View("LogIn", "Account"); 
+        return View("LogIn"); 
     }
     
     [HttpPost]
@@ -21,13 +21,13 @@ public class AccountController : Controller
         {
             HttpContext.Session.SetString("IdUsuario", usuario.ID.ToString());
             BD.ActLogIn(usuario.ID);
-            return RedirectToAction("Index", "Home");
+            return View();
         }
         else{
             ViewBag.Mensaje = "Usuario o contraseña incorrectos.";
         }
         
-        return View("Login");
+        return View();
 
     }
     
@@ -41,12 +41,21 @@ public class AccountController : Controller
     }
     public IActionResult signIn()
     {
-        return View("Account", "SignIn");
+        return View("SignIn");
     }
     
     [HttpPost]
-    public IActionResult saveSignIn()
+    public IActionResult saveSignIn(string nombre, string apellido, string foto, string username, string contraseña)
     {
+        if (BD.searchUsername(username))
+        {
+            ViewBag.message = "El nombre de usuario ya existe.";
+            return View("SignIn");
+        }
+        else{
+            Usuario usuario = new Usuario (nombre, apellido, foto, username, DateTime.Now, contraseña);
+            BD.signIn(usuario);
+        }
         return View();
     }
     

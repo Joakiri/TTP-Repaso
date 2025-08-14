@@ -35,13 +35,13 @@ h3{
   justify-content: center;
 }
 .login h3{
-  color:lightsteelblue;
+  color:powderblue;
   font-size: xx-large;
   font-weight: bold;
   text-align: center;
 }
 .login form{
-  color:lightsteelblue;
+  color:blueviolet;
   font-size: medium;
   font-style: italic;
   text-align: center;
@@ -50,6 +50,7 @@ h3{
   padding: 1%;
   margin: 2%;
   width: 30%;
+  margin-left: 34%;
 }
 .signin{
   background-color: rgb(171, 148, 202);
@@ -60,21 +61,22 @@ h3{
   justify-content: center;
 }
 .signin h3{
-  color: aquamarine;
+  color:powderblue;
   font-size: xx-large;
   font-weight: bold;
   text-align: center;
 }
 .signin form{
-  color: lightsteelblue;
+  color:blueviolet;
   font-size: medium;
   font-style: italic;
   text-align: center;
   border-radius: 20px;
-  background-color: powderblue;
+  background-color:powderblue;
   padding: 1%;
   margin: 2%;
   width: 30%;
+  margin-left: 34%;
 }
 .newtarea{
   background-color: rgb(171, 148, 202);
@@ -105,21 +107,27 @@ h3{
 .index{
   background-color:peachpuff;
 }
+
 .index h2 {
- color: aquamarine;
+ color:beige;
 }
 .index div{ 
   display: flex;
   justify-content: center;
 }
 .index a{
-  border-radius: 20px;
-  background-color: aquamarine;
+  border-radius: 30px;
+  background-color: beige;
   padding: 1%;
   text-decoration: none;
-  color: rgb(196, 158, 54);
-  margin: 1%;
+  color:black;
+  margin-left: 39%;
+  margin-bottom: 2.5%;
+  width: 20%;
 }
 .index a:hover{
-  box-shadow: 1px 1px 10px aquamarine;
+  box-shadow: 1px 1px 10px beige;
+}
+.index section{
+  margin-bottom: 100%;
 }

@@ -19,6 +19,7 @@ public class HomeController : Controller
     }
 
     public IActionResult showTareas(){
+        BD.returnTareas(1);
         return View();
     }
     public IActionResult newTarea(){
