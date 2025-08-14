@@ -10,14 +10,116 @@ html {
 }
 
 body {
-  margin: 10px;
-  padding: 10px;
+  background:cover ;
+}
+ a{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  text-decoration: none;
+  color: aquamarine;
+  padding: 2%;
+}
+h3{
+  color: rgb(72, 132, 211);
+  display: flex;
+  justify-content: center;
+}
+.login{
+  background-color: rgb(171, 148, 202);
+  background: cover;
+}
+.login div{
+  display: flex;
+  justify-content: center;
+}
+.login h3{
+  color:lightsteelblue;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+.login form{
+  color:lightsteelblue;
+  font-size: medium;
+  font-style: italic;
+  text-align: center;
+  border-radius: 20px;
+  background-color:powderblue;
+  padding: 1%;
+  margin: 2%;
+  width: 30%;
+}
+.signin{
+  background-color: rgb(171, 148, 202);
+  background: cover;
+}
+.signin div{
+  display: flex;
+  justify-content: center;
+}
+.signin h3{
+  color: aquamarine;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+.signin form{
+  color: lightsteelblue;
+  font-size: medium;
+  font-style: italic;
+  text-align: center;
+  border-radius: 20px;
+  background-color: powderblue;
+  padding: 1%;
+  margin: 2%;
+  width: 30%;
+}
+.newtarea{
+  background-color: rgb(171, 148, 202);
+  background: cover;
+}
+.newtarea div{
+  display: flex;
+  justify-content: center;
+}
+.newtarea h3{
+  color: aquamarine;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+.newtarea form{
+  color: lightsteelblue;
+  font-size: medium;
+  font-style: italic;
+  text-align: center;
+  border-radius: 20px;
+  background-color: powderblue;
+  padding: 1%;
+  margin: 2%;
+  width: 30%;
 }
 
-
-footer {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+.index{
+  background-color:peachpuff;
+}
+.index h2 {
+ color: aquamarine;
+}
+.index div{ 
+  display: flex;
+  justify-content: center;
+}
+.index a{
+  border-radius: 20px;
+  background-color: aquamarine;
+  padding: 1%;
+  text-decoration: none;
+  color: rgb(196, 158, 54);
+  margin: 1%;
+}
+.index a:hover{
+  box-shadow: 1px 1px 10px aquamarine;
 }
