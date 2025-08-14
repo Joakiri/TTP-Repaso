@@ -22,27 +22,27 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult newTarea(){
-
+        return View();
     }
 
     [HttpPost]
     public IActionResult saveNewTarea(){
-
+        return View();
     }
     
     public IActionResult editTarea(){
-
+        return View();
     }
 
     [HttpPost]
     public IActionResult endEditTarea(){
-
+        return View();
     }
     public IActionResult deleteTarea(){
-
+        return View();
     }
     public IActionResult endTarea(){
-
+        return View();
     }
     
 }

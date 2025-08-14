@@ -4,7 +4,7 @@ using TP06.Models;
 
 namespace TP06.Controllers;
 
-public class HomeController : Controller
+public class AccountController : Controller
 {
     private readonly ILogger<AccountController> _logger;
 
@@ -14,13 +14,13 @@ public class HomeController : Controller
     }
     
     [HttpPost]
-    public IActionResult saveLogIn()
+    public IActionResult saveLogIn(string username, string password)
     { 
         Usuario usuario = BD.searchUsuario(username, password);
         if (usuario != null)
         {
-            HttpContext.Session.SetString("IdUsuario", usuario.Id.ToString());
-            BD.ActualizarUltimoLogin(usuario.Id);
+            HttpContext.Session.SetString("IdUsuario", usuario.ID.ToString());
+            BD.ActLogIn(usuario.ID);
             return RedirectToAction("Index", "Home");
         }
         else{

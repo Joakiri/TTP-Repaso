@@ -1,6 +1,5 @@
 public class Usuario
 {
-    [JsonProperty]
     public int ID {get; private set;}
     public string Nombre {get; private set;}
     public string Apellido {get; private set;}
@@ -9,7 +8,7 @@ public class Usuario
     public DateTime UltimoLogin {get; private set;}
     public string Password {get; private set;}
 
-    public usuario(int ID, string Nombre, string Apellido, string Foto, string Username, DateTime UltimoLogin, string Password){
+    public Usuario(int ID, string Nombre, string Apellido, string Foto, string Username, DateTime UltimoLogin, string Password){
         this.ID = ID;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
@@ -18,7 +17,7 @@ public class Usuario
         this.UltimoLogin = UltimoLogin;
         this.Password = Password;
     }
-    public usuario (){
+    public Usuario (){
 
     }
 }
