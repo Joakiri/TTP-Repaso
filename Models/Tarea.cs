@@ -13,8 +13,7 @@ public class Tarea
     
    
 
-    public Tarea(int ID, string Titulo, string Descripcion, DateTime Fecha, bool Finalizado, int IDUsuario){
-        this.ID = ID;
+    public Tarea(string Titulo, string Descripcion, DateTime Fecha, bool Finalizado, int IDUsuario){        
         this.Titulo = Titulo;
         this.Descripcion = Descripcion;
         this.Fecha = Fecha;

@@ -1,7 +1,7 @@
 <section class = signin>
 
 <h3>Ingrese sus datos</h3>
-<form action = asp-action = "saveSignIn" asp-controller="Account" method = "POST">
+<form action = '@Url.Action("saveSignIn", "Account")' method = "POST">
   Ingrese su nombre:<input type="text" name="nombre" /><br/>
   Ingrese su apellido:<input type="text" name="apellido" /><br/>
   Ingrese su username:<input type="text" name="username"/><br/>

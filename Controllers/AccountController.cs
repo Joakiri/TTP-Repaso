@@ -21,11 +21,11 @@ public class AccountController : Controller
         {
             HttpContext.Session.SetString("IdUsuario", usuario.ID.ToString());
             BD.ActLogIn(usuario.ID);
-            return RedirectToAction("IndexOpciones"); 
+            return RedirectToAction("IndexOpciones", "Home"); 
         }
         else
         {
-            ViewBag.Mensaje = "Usuario o contraseña incorrectos.";
+            ViewBag.message = "Usuario o contraseña incorrectos.";
             return View("Login");
         }
 }
@@ -55,7 +55,7 @@ public class AccountController : Controller
         {
             Usuario usuario = new Usuario(nombre, apellido, foto, username, DateTime.Now, password);
             BD.signIn(usuario);
-            return RedirectToAction("IndexOpciones"); 
+            return RedirectToAction("IndexOpciones", "Home"); 
         }
     }
     

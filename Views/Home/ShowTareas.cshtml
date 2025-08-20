@@ -1,8 +1,10 @@
-<h1>¡Hola! estas son tus tareas:</h21>
-<h2>
-@foreach(tarea in ViewBag.Tareas){
+<section class = ShowTareas>
+<h3>¡Hola! estas son tus tareas:</h3>
+@foreach(Tarea tarea in ViewBag.Tareas){
 <p>Titulo: @tarea.Titulo</p>
-<p>Descripción: @tarea.Descripción</p>    
+<p>Descripción: @tarea.Descripcion</p>    
 <p>Fecha de creación: @tarea.Fecha</p>    
-<p>Terminada: @tarea.Finalizado</p>    
-}</h2>
+<p>Terminada: @tarea.Finalizado</p> 
+}
+<a href='@Url.Action("newTarea", "Home")'> Inicio </a>  
+</section>

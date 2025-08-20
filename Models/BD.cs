@@ -48,7 +48,7 @@ public static Usuario LogIn(string Username, string Password)
     return miUser;
 }
 
-public static List<Tarea> returnTareas(int IDUsuario)
+public static List<Tarea> returnTareas(string IDUsuario)
 {
     List<Tarea> tareas = new List<Tarea>(); 
     using(SqlConnection connection = new SqlConnection(_connectionString))
@@ -76,7 +76,7 @@ public  static void deleteTarea(Tarea ID) //void
 {
 
 }
-public static void newTarea(Tarea tarea) //pasar bien el objeto por parametro y es void/bool
+public static void newTarea(string IDU, Tarea tarea) //pasar bien el objeto por parametro y es void/bool
 {
 
 }

@@ -18,34 +18,47 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult IndexOpciones()
+    {
+        return View("IndexOpciones");
+    }
     public IActionResult showTareas(){
         List<Tarea> Tareas = new List<Tarea>();
-        Tareas = BD.returnTareas(1);
+        string IDUsuarioStr = HttpContext.Session.GetString("IdUsuario");
+        Tareas = BD.returnTareas(IDUsuarioStr);
         ViewBag.Tareas = Tareas;
         return View("ShowTareas");
     }
     public IActionResult newTarea(){
-        return View();
+        return View("NewTarea");
     }
 
     [HttpPost]
-    public IActionResult saveNewTarea(){
-        return View();
+    public IActionResult saveNewTarea(string titulo, string descripcion){
+        string IDUsuarioStr = HttpContext.Session.GetString("IdUsuario");
+        int IDUT = int.Parse(IDUsuarioStr);
+        Tarea tar = new Tarea(titulo, descripcion, DateTime.Now, false, IDUT);
+        BD.newTarea(IDUsuarioStr, tar);
+        ViewBag.message = "Tarea agregada con exito";
+        return View("IndexOpciones");
     }
     
     public IActionResult editTarea(){
-        return View();
+        return View("ModifyTarea");
     }
 
     [HttpPost]
     public IActionResult endEditTarea(){
-        return View();
-    }
-    public IActionResult deleteTarea(){
-        return View();
+        string IDUsuarioStr = HttpContext.Session.GetString("IdUsuario");//HACER
+        int IDUT = int.Parse(IDUsuarioStr);
+        Tarea tar = new Tarea(titulo, descripcion, DateTime.Now, false, IDUT);
+        BD.newTarea(IDUsuarioStr, tar);
+        ViewBag.message = "Tarea agregada con exito";
+        return View("IndexOpciones");
     }
     public IActionResult endTarea(){
-        return View();
+
+        return View("endTarea");
     }
     
 }

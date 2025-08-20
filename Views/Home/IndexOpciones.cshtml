@@ -1,3 +1,11 @@
-@{
-    ViewData["Title"] = "Index";
+<section class = indexOp >
+@if(ViewBag.message != ""){
+  <h2>@ViewBag.message</h2>
 }
+<h2> Elige que opcion queres hacer</h2>
+<a href='@Url.Action("endTarea", "Home")'> Eliminar tarea </a>
+<a href='@Url.Action("editTarea", "Home")'> Modificar tarea </a>
+<a href='@Url.Action("showTareas", "Home")'> Mostrar tareas </a>
+<a href='@Url.Action("newTarea", "Home")'> Nueva tarea </a>
+<a href='@Url.Action("logOut", "Account")'> logOut </a>
+</section>

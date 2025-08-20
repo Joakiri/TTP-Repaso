@@ -18,7 +18,7 @@ a{
   width: 96%;
   height: auto;
   text-decoration: none;
-  color: aquamarine;
+  color: rgb(0, 0, 0);
   padding: 2%;
 }
 h3{
@@ -85,7 +85,7 @@ h3{
   margin-left: 34%;
 }
 .newtarea{
-  background-color: rgb(171, 148, 202);
+  background-color: rgb(148, 196, 202);
   background: cover;
 }
 .newtarea div{
@@ -93,21 +93,22 @@ h3{
   justify-content: center;
 }
 .newtarea h3{
-  color: aquamarine;
+  color: rgb(255, 255, 255);
   font-size: xx-large;
   font-weight: bold;
   text-align: center;
 }
 .newtarea form{
-  color: lightsteelblue;
+  color: rgb(176, 222, 176);
   font-size: medium;
   font-style: italic;
   text-align: center;
   border-radius: 20px;
-  background-color: powderblue;
+  background-color: rgb(178, 230, 176);
   padding: 1%;
   margin: 2%;
   width: 30%;
+  margin-left: 34%;
 }
 
 .index{
@@ -137,3 +138,84 @@ h3{
 .index section{
   margin-bottom: 100%;
 }
+.indexOp{
+  background-color:peachpuff;
+}
+.indexOp h2{
+  text-align: center;
+}
+.indexOp div{ 
+  display: flex;
+  justify-content: center;
+}
+.indexOp a{
+  border-radius: 30px;
+  background-color: beige;
+  padding: 1%;
+  text-decoration: none;
+  color:black;
+  margin-left: 39%;
+  margin-bottom: 2.5%;
+  width: 20%;
+}
+.indexOp a:hover{
+  box-shadow: 1px 1px 10px beige;
+}
+.indexOp section{
+  margin-bottom: 100%;
+}
+.newtarea{
+  background-color: rgb(148, 196, 202);
+  background: cover;
+}
+.endTarea div{
+  display: flex;
+  justify-content: center;
+}
+.endTarea h3{
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+.endTarea h4{
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: large;
+}
+.endTarea {
+  background-color: rgb(148, 196, 202);
+  background: cover;
+}
+.endTarea form{
+  color: rgb(176, 222, 176);
+  font-size: medium;
+  font-style: italic;
+  text-align: center;
+  border-radius: 20px;
+  background-color: rgb(178, 230, 176);
+  padding: 1%;
+  margin: 2%;
+  width: 30%;
+  margin-left: 34%;
+}
+.ShowTareas{
+  background-color: rgb(148, 196, 202);
+  background: cover;
+}
+.ShowTareas div{
+  display: flex;
+  justify-content: center;
+}
+.ShowTareas h3{
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+.ShowTareas h4{
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: large;
+}
+
