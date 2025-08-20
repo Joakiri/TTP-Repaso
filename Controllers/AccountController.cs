@@ -21,15 +21,14 @@ public class AccountController : Controller
         {
             HttpContext.Session.SetString("IdUsuario", usuario.ID.ToString());
             BD.ActLogIn(usuario.ID);
-            return View();
+            return RedirectToAction("IndexOpciones"); 
         }
-        else{
+        else
+        {
             ViewBag.Mensaje = "Usuario o contraseña incorrectos.";
+            return View("Login");
         }
-        
-        return View();
-
-    }
+}
     
     public IActionResult Index()
     {
@@ -50,13 +49,14 @@ public class AccountController : Controller
         if (!BD.searchUsername(username))
         {
             ViewBag.message = "El nombre de usuario ya existe.";
-            return View("SignIn");
+            return View("SignIn"); 
         }
-        else{
-            Usuario usuario = new Usuario (nombre, apellido, foto, username, DateTime.Now, password);
+        else
+        {
+            Usuario usuario = new Usuario(nombre, apellido, foto, username, DateTime.Now, password);
             BD.signIn(usuario);
+            return RedirectToAction("IndexOpciones"); 
         }
-        return View();
     }
     
 }

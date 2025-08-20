@@ -1,0 +1,8 @@
+<h1>¡Hola! estas son tus tareas:</h21>
+<h2>
+@foreach(tarea in ViewBag.Tareas){
+<p>Titulo: @tarea.Titulo</p>
+<p>Descripción: @tarea.Descripción</p>    
+<p>Fecha de creación: @tarea.Fecha</p>    
+<p>Terminada: @tarea.Finalizado</p>    
+}</h2>

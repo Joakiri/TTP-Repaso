@@ -19,8 +19,10 @@ public class HomeController : Controller
     }
 
     public IActionResult showTareas(){
-        BD.returnTareas(1);
-        return View();
+        List<Tarea> Tareas = new List<Tarea>();
+        Tareas = BD.returnTareas(1);
+        ViewBag.Tareas = Tareas;
+        return View("ShowTareas");
     }
     public IActionResult newTarea(){
         return View();
