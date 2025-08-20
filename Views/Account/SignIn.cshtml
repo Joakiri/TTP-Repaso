@@ -2,15 +2,16 @@
 
 <h3>Ingrese sus datos</h3>
 <form action = '@Url.Action("saveSignIn", "Account")' method = "POST">
-  Ingrese su nombre:<input type="string" name="name" /><br/>
-  Ingrese su apellido:<input type="string" name="surname" /><br/>
-  Ingrese su username:<input type="string" name="username"/><br/>
-  Ingrese su contraseña: <input type="string" name="password" /><br/>
-  Ingrese su foto:<input type="image" name="photo" ><br/>
+  Ingrese su nombre:<input type="text" name="nombre" /><br/>
+  Ingrese su apellido:<input type="text" name="apellido" /><br/>
+  Ingrese su username:<input type="text" name="username"/><br/>
+  Ingrese su contraseña: <input type="password" name="password" /><br/>
+  Ingrese su foto:<input type="text" name="foto" ><br/>
+  <input type="submit" value = "Enviar" placeholder = "Enviar" ><br/>
 </form>
 
 <a href='@Url.Action("LogIn", "Account")'> ¿YA TIENES CUENTA? TOQUE AQUI</a>
 @if(ViewBag.message != ""){
-  <h2>ViewBag.message</h2>
+  <h2>@ViewBag.message</h2>
 }
 </section>

@@ -6,7 +6,7 @@ public static class BD{
 
 public static void signIn(Usuario user)
 {
-    string query = "INSERT INTO Usarios (Nombre, Apellido, Foto, Username, UltimoLogin, Password) VALUES (@pNombre, @pApellido, @pFoto, @pUsername, @pUltimoLogin, @pPassword)";
+    string query = "INSERT INTO Usuarios (Nombre, Apellido, Foto, Username, UltimoLogin, Password) VALUES (@pNombre, @pApellido, @pFoto, @pUsername, @pUltimoLogin, @pPassword)";
     using(SqlConnection connection = new SqlConnection(_connectionString))
     {
     connection.Execute(query, new {pNombre = user.Nombre, pApellido = user.Apellido, pFoto = user.Foto, pUsername = user.Username, pUltimoLogin = user.UltimoLogin, pPassword = user.Password});
@@ -16,8 +16,8 @@ public static Usuario searchUsuario(string username, string password){
         Usuario usuario = null;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Usuarios WHERE Username = @Username AND Password = @Password";
-            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { Username = username, Password = password});
+            string query = "SELECT * FROM Usuarios WHERE Username = @PUsername AND Password = @PPassword";
+            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { PUsername = username, PPassword = password});
         }
         return usuario;
     }  
@@ -87,5 +87,10 @@ public  static void endTarea(Tarea ID) //void
 public  static void ActLogIn(int IDUsuario)
 {
 
+    string query = "UPDATE Usuarios SET UltimoLogin = GETDATE() WHERE Id = @Id";
+    using (SqlConnection connection = new SqlConnection(_connectionString))
+    {
+        connection.Execute(query, new { Id = IDUsuario });
+    }
 }
 }

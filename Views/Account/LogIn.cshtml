@@ -3,12 +3,14 @@
 <h3>Ingrese sus datos</h3>
 
 <form action = '@Url.Action("saveLogIn", "Account")' method = "POST">
-  Ingrese su usuario:<input type="string" name="user" placeholder="Ingrese su usuario"/><br/>
-  Ingrese su contraseña:<input type="string" name="password" placeholder="Ingrese su contraseña"/><br/>
-    <input type="submit" value="Mandar"><br/>
+  Ingrese su username:<input type="text" name="username" /><br/>
+  Ingrese su contraseña:<input type="password" name="password" /><br/>
+  <input type="submit" value="Enviar"><br/>
 </form>
 
-<div>
 <a href='@Url.Action("signIn", "Account")'> ¿NO TIENES CUENTA? TOQUE AQUI </a>
+@if(ViewBag.message != ""){
+  <h2>@ViewBag.message</h2>
+}
 </section>
-</div>
+

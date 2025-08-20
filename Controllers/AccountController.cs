@@ -45,15 +45,15 @@ public class AccountController : Controller
     }
     
     [HttpPost]
-    public IActionResult saveSignIn(string nombre, string apellido, string foto, string username, string contraseña)
+    public IActionResult saveSignIn(string nombre, string apellido, string foto, string username, string password)
     {
-        if (BD.searchUsername(username))
+        if (!BD.searchUsername(username))
         {
             ViewBag.message = "El nombre de usuario ya existe.";
             return View("SignIn");
         }
         else{
-            Usuario usuario = new Usuario (nombre, apellido, foto, username, DateTime.Now, contraseña);
+            Usuario usuario = new Usuario (nombre, apellido, foto, username, DateTime.Now, password);
             BD.signIn(usuario);
         }
         return View();
