@@ -109,11 +109,11 @@ public static void newTarea(Tarea tarea)
         });
     }
 }
-public  static void endTarea(int Id) 
+public  static void endTarea(int id) 
 {
-    string query = @"DELETE FROM Tareas WHERE Id = @Id";    using (SqlConnection connection = new SqlConnection(_connectionString))
+    string query = @"DELETE FROM Tareas WHERE ID = @ID";    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        connection.Execute(query, new { ID = Id });
+        connection.Execute(query, new { ID = id });
     }
 }
 public  static void ActLogIn(int IDUsuario)

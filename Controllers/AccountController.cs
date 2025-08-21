@@ -36,7 +36,8 @@ public class AccountController : Controller
     }
     public IActionResult logOut()
     {
-        return View();
+        HttpContext.Session.Clear();
+        return RedirectToAction("Index", "Home");
     }
     public IActionResult signIn()
     {

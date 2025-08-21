@@ -1,13 +1,16 @@
 <section class = endTarea>
-<h3>ELIMINAR TAREA</h3>
-<form action = '@Url.Action("endTarea", "Account")' method = "POST">
+  <h1>ELIMINAR TAREA</h1> 
+  <h3>Ingrese el titulo de la tarea a eliminar:</h4>
+  <form action = '@Url.Action("saveEndTarea", "Home")' method = "POST">
+    <input type="text" name="titulo" placeholder = "Ingresar titulo" /><br/>
+    <input type="submit" value="Enviar"><br/>
+  </form>
 
-  <h4>Ingrese el titulo de la tarea a eliminar:</h4> <input type="text" name="titulo" /><br/>
-  <input type="submit" value="Enviar"><br/>
-</form>
+  @if(ViewBag.message != "")
+  {
+    <h2>@ViewBag.message</h2>
+  }
 
-<a href='@Url.Action("signIn", "Account")'> ¿NO TIENES CUENTA? TOQUE AQUI </a>
-@if(ViewBag.message != ""){
-  <h2>@ViewBag.message</h2>
-}
+  <a href='@Url.Action("IndexOpciones", "Home")'> Inicio </a>  
+  
 </section>

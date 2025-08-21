@@ -1,7 +1,7 @@
 html {
   font-size: 14px;
   height: 100%;
-
+  background-size: cover;
 }
 
 @media (min-width: 768px) {
@@ -14,20 +14,18 @@ main{
   height: auto;
 }
 body {
-  background:cover ;
+  background-size:cover ;
 }
 a{
   display: flex;
   justify-content: center;
-  width: 2%;
+  width: 15%;
   height: auto;
   text-decoration: none;
   color: rgb(0, 0, 0);
-  padding-right: 2%;
-  padding-left: 2%;
   background-color: rgb(255, 137, 137);
   border-radius: 25px;
-  margin-left: 47%;
+  margin-left: 42%;
   margin-top: 3%;
   margin-bottom: 40%;
 }
@@ -178,6 +176,15 @@ h3{
   display: flex;
   justify-content: center;
 }
+.endTarea h1{
+  color: white;
+  background-color: rgb(176, 222, 176);
+  font-weight: bold;
+  text-align: center;
+  width: 20%;
+  border-radius: 20px;
+  margin-left:40%;
+}
 .endTarea h3{
   color: rgb(255, 255, 255);
   font-size: xx-large;
@@ -217,8 +224,8 @@ h3{
   border-radius: 30px;
   margin: 10%;
   margin-left:28%;
-  padding-right: 7%;
-  padding-left: 7%;
+  padding-right: 5%;
+  padding-left: 5%;
   border-color: black;
 }
 .ShowTareas p{
@@ -252,6 +259,11 @@ h3{
   text-align: center;
   font-size: large; 
 }
+.ModifyTareaTit h2, .endTarea h2, .ModifyTarea h2{
+  color: red;
+  text-align: center;
+  font-size: x-large; 
+}
 .ModifyTareaTit {
   background-color: rgb(148, 196, 202);
   background: cover;
@@ -270,8 +282,10 @@ h3{
 }
 .ModifyTarea div{
   display: flex;
-  justify-content: center;
+  justify-content:
+   center;
 }
+
 .ModifyTarea h3{
   color: rgb(255, 255, 255);
   font-size: xx-large;

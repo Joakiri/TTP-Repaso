@@ -49,39 +49,25 @@ public class HomeController : Controller
         return View("IndexOpciones");
     }
     
-    public IActionResult editTarea(){
-        return View("ModifyTareaTit");
+    public IActionResult editTarea(int id){
+        Tarea tarea = BD.returnTarea(id);
+        Console.WriteLine(tarea);
+        ViewBag.tareaa = tarea;
+        return View("ModifyTarea");
     }
 
-    [HttpPost]
-    public IActionResult endEditTareaTit(string titulo){
-        string IDUsuarioStr = HttpContext.Session.GetString("IdUsuario");
-        Tarea ttar = BD.returnTareaTit(titulo);
-        if(ttar != null){
-            ViewBag.tareaa = ttar;
-            ViewBag.message = "Tarea encontrada con exito";
-            return View("ModifyTarea");//Poner Placeholder en form
-        }
-        else{
-            ViewBag.message = "No se encontro el titulo de la tarea.";
-            return View("ModifyTareaTit");
-        }
-        }
-        
        
      [HttpPost]
     public IActionResult endEditTarea(int ID, string ntitulo, string ndescripcion, DateTime nfecha, bool nFinalizado, int nidusuario){
-        //Borrar vieja y hacer nueva
-        string idUsuarioStr = HttpContext.Session.GetString("IdUsuario");
-        Tarea nTar = new Tarea (ID, ntitulo, ndescripcion, nfecha, nFinalizado, nidusuario);
-        BD.modifyTarea(ntar);
+        Tarea nTar = new Tarea (ntitulo, ndescripcion, nfecha, nFinalizado, nidusuario);
+        BD.modifyTarea(nTar);
         return View("ModifyTarea");
     }
-    [HttpPost]
-    public IActionResult endTarea(int id){
-    string idUsuarioStr = HttpContext.Session.GetString("IDUsuario");
-        BD.endTarea(id);
-        return View("endTarea");
-    }
+
+
+        public IActionResult endTarea(int id){
+            BD.endTarea(id);
+        return RedirectToAction("showTareas");
+        }
     
 }

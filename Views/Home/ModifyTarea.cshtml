@@ -1,12 +1,18 @@
 <section class = ModifyTarea>
 
-<h3>Ingrese nuevos datos para su tarea</h3>
+<h3>Ingrese los nuevos datos para su tarea</h3>
+
+<form action = '@Url.Action("endEditTareaTit", "Home")' method = "POST">
+    <input type="text" name="ntitulo" placeholder= "Ingrese un nuevo titulo"o/><br/>
+    <input type="textArea" name="ndescripcion" placeholder= "Ingrese una nueva descripcion"/><br/>
+    <input type="submit" value="Mandar">
+    <input type="hidden" name = "ID" value='@ViewBag.ID'>
+</form>
+
 @if(ViewBag.message != ""){
   <h2>@ViewBag.message</h2>
 }
-<form action = '@Url.Action("endEditTarea", "Home")' method = "POST">
-    <input type="text" name="titulo" placeholder="@ViewBag.tareaa.Titulo"/><br/>
-    <input type="textArea" name="descripcion" placeholder="@ViewBag.tareaa.descripcion"/><br/>
-    <input type="submit" value="Mandar">
-</form>
+
+<a href='@Url.Action("IndexOpciones", "Home")'> Inicio </a>  
+
 </section>

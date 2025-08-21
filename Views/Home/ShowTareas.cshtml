@@ -8,8 +8,11 @@
 <p>DESCRIPCION: @tarea.Descripcion</p>    
 <p>FECHA DE CREACION: @tarea.Fecha</p>    
 <p>TERMINADA: @tarea.Finalizado</p> 
+<a href='@Url.Action("editTarea", "Home", new {id=tarea.ID})'> Editar </a>
+<a href='@Url.Action("endTarea", "Home", new {id=tarea.ID})'> Eliminar </a>
 </div>
 }
 
-<a href='@Url.Action("IndexOpciones", "Home")'> Inicio </a>  
+<a href='@Url.Action("IndexOpciones", "Home")'> Inicio </a> 
+ 
 </section>
