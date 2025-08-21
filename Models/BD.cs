@@ -80,7 +80,8 @@ public static Tarea returnTareaTit(string titulo)
 }
 public  static void modifyTarea(Tarea tarea)
 {
-string query = @"UPDATE Tareas SET Titulo = @pTitulo, Descripcion = @pDescripcion, Fecha = @pFecha, Finalizado = @pFinalizado WHERE ID = @Id";    using (SqlConnection connection = new SqlConnection(_connectionString))
+string query = @"UPDATE Tareas SET Titulo = @pTitulo, Descripcion = @pDescripcion, Fecha = @pFecha, Finalizado = @pFinalizado WHERE ID = @Id";   
+using (SqlConnection connection = new SqlConnection(_connectionString))
     {
         connection.Execute(query, new
         {

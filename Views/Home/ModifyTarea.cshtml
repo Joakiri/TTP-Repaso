@@ -5,8 +5,8 @@
   <h2>@ViewBag.message</h2>
 }
 <form action = '@Url.Action("endEditTarea", "Home")' method = "POST">
-    <input type="text" name="titulo" placeholder="Ingrese nuevos datos para tarea"/><br/>
-    <input type="textArea" name="descripcion" placeholder="Ingrese una descripcion"/><br/>
+    <input type="text" name="titulo" placeholder="@ViewBag.tareaa.Titulo"/><br/>
+    <input type="textArea" name="descripcion" placeholder="@ViewBag.tareaa.descripcion"/><br/>
     <input type="submit" value="Mandar">
 </form>
 </section>
