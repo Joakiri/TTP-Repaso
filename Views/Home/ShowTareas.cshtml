@@ -1,18 +1,20 @@
 <section class = ShowTareas>
-
+<div>
+<a href='@Url.Action("newTarea", "Home")'> Editar </a>
 <h3>¡Hola! estas son tus tareas:</h3>
+<a href='@Url.Action("LogOut", "Account")'> Editar </a>
+</div>
 
 @foreach(Tarea tarea in ViewBag.Tareas){
     <div>
 <p>TITULO: @tarea.Titulo</p>
 <p>DESCRIPCION: @tarea.Descripcion</p>    
 <p>FECHA DE CREACION: @tarea.Fecha</p>    
-<p>TERMINADA: @tarea.Finalizado</p> 
+<p>TERMINADA: @(tarea.Finalizado ? "Sí" : "No")</p>
 <a href='@Url.Action("editTarea", "Home", new {id=tarea.ID})'> Editar </a>
-<a href='@Url.Action("endTarea", "Home", new {id=tarea.ID})'> Eliminar </a>
+<a href='@Url.Action("endTarea", "Home", new {id=tarea.ID})'> Terminar</a>
+<a href='@Url.Action("deleteTarea", "Home", new {id=tarea.ID})'> Borrar</a>
 </div>
 }
 
-<a href='@Url.Action("IndexOpciones", "Home")'> Inicio </a> 
- 
 </section>

@@ -4,9 +4,10 @@
 <form action = '@Url.Action("saveNewTarea", "Home")' method = "POST">
     <input type="text" name="titulo" placeholder="Ingrese titulo de nueva tarea"/><br/>
     <input type="textArea" name="descripcion" placeholder="Ingrese una descripcion"/><br/>
+    <input type="text" name="fecha" placeholder="Ingrese una fecha en el siguiente formato DD/MM/AA"/><br/>
     <input type="submit" value="Mandar">
 </form>
 
-<a href='@Url.Action("IndexOpciones", "Home")'> Inicio </a>  
+<a href='@Url.Action("showTareas", "Home")'> Inicio </a>  
 
 </section>

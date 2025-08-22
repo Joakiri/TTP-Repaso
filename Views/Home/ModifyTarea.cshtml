@@ -2,9 +2,10 @@
 
 <h3>Ingrese los nuevos datos para su tarea</h3>
 
-<form action = '@Url.Action("endEditTareaTit", "Home")' method = "POST">
+<form action = '@Url.Action("endEditTarea", "Home")' method = "POST">
     <input type="text" name="ntitulo" placeholder= "Ingrese un nuevo titulo"o/><br/>
     <input type="textArea" name="ndescripcion" placeholder= "Ingrese una nueva descripcion"/><br/>
+    <input type="text" name="nfecha" placeholder= "Ingrese una nueva fecha"/><br/>
     <input type="submit" value="Mandar">
     <input type="hidden" name = "ID" value='@ViewBag.ID'>
 </form>
@@ -13,6 +14,6 @@
   <h2>@ViewBag.message</h2>
 }
 
-<a href='@Url.Action("IndexOpciones", "Home")'> Inicio </a>  
+<a href='@Url.Action("showTareas", "Home")'> Inicio </a>  
 
 </section>
