@@ -114,10 +114,10 @@ public  static void endTarea(int id)
     string query = "UPDATE Tareas SET Finalizado = 1 WHERE Id = @Id";
     using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        connection.Execute(query, new { Id = IDUsuario });
+        connection.Execute(query, new { Id = id });
     }
 }
-public static void deleteTarea(){
+public static void deleteTarea(int id){
    string query = @"DELETE FROM Tareas WHERE ID = @ID";    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
         connection.Execute(query, new { ID = id });

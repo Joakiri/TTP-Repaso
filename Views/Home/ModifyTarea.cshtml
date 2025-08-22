@@ -5,7 +5,7 @@
 <form action = '@Url.Action("endEditTarea", "Home")' method = "POST">
     <input type="text" name="ntitulo" placeholder= "Ingrese un nuevo titulo"o/><br/>
     <input type="textArea" name="ndescripcion" placeholder= "Ingrese una nueva descripcion"/><br/>
-    <input type="text" name="nfecha" placeholder= "Ingrese una nueva fecha"/><br/>
+    <input type="date" name="nfecha" placeholder= "Ingrese una nueva fecha"/><br/>
     <input type="submit" value="Mandar">
     <input type="hidden" name = "ID" value='@ViewBag.ID'>
 </form>

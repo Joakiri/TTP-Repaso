@@ -41,12 +41,14 @@ public class HomeController : Controller
             Tarea tar = new Tarea(titulo, descripcion, fecha, false, IDUT);
             BD.newTarea(tar);
             ViewBag.message = "Tarea agregada con exito";
+            return RedirectToAction("showTareas");
         }
         else{
-            ViewBag.message = "Tarea agregada con exito"; 
+            ViewBag.message = "No se pudo agregar la tarea"; 
+            return View("NewTarea");
         }
 
-        return View("ShowTareas");
+        
     }
     
     public IActionResult editTarea(int id){
