@@ -59,11 +59,11 @@ public class HomeController : Controller
 
        
      [HttpPost]
-    public IActionResult endEditTarea(int ID, string ntitulo, string ndescripcion, DateTime nfecha, int nidusuario){
-        Tarea nTar = new Tarea (ntitulo, ndescripcion, nfecha, false , nidusuario);
+    public IActionResult endEditTarea(int ID, string ntitulo, string ndescripcion, DateTime nfecha, bool nTerminado, int nidusuario){
+        Tarea nTar = new Tarea (ntitulo, ndescripcion, nfecha, nTerminado, nidusuario);
         BD.modifyTarea(nTar, ID);
-        ViewBag.message = "Tarea modificada con exito"
-        return View("ModifyTarea");
+        ViewBag.message = "Tarea modificada con exito";
+        return RedirectToAction("showTareas");
     }
 
 

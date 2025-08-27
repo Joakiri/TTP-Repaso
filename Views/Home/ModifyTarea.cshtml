@@ -6,8 +6,10 @@
     <input type="text" name="ntitulo" placeholder= "Ingrese un nuevo titulo"o/><br/>
     <input type="textArea" name="ndescripcion" placeholder= "Ingrese una nueva descripcion"/><br/>
     <input type="date" name="nfecha" placeholder= "Ingrese una nueva fecha"/><br/>
+    Terminada?<input type="checkbox" name="nTerminado" placeholder= "Ingrese una nueva fecha"/><br/>
     <input type="submit" value="Mandar">
-    <input type="hidden" name = "ID" value='@ViewBag.ID'>
+    <input type="hidden" name = "ID" value='@ViewBag.tareaa.ID'>
+    <input type="hidden" name = "nidusuario" value='@ViewBag.tareaa.IDUsuario'>
 </form>
 
 @if(ViewBag.message != ""){

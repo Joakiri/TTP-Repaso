@@ -11,22 +11,34 @@ public static void signIn(Usuario user)
     {
     connection.Execute(query, new {pNombre = user.Nombre, pApellido = user.Apellido, pFoto = user.Foto, pUsername = user.Username, pUltimoLogin = user.UltimoLogin, pPassword = user.Password});
     }
-}
-public static Usuario searchUsuario(string username, string password){
+    }
+    public static Usuario searchUsuario(string username, string password){
+            Usuario usuario = null;
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM Usuarios WHERE Username = @PUsername AND Password = @PPassword";
+                usuario = connection.QueryFirstOrDefault<Usuario>(query, new { PUsername = username, PPassword = password});
+            }
+        return usuario;
+    } 
+    
+    public static Usuario getUsuarioByUsername(string username)
+    {
         Usuario usuario = null;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Usuarios WHERE Username = @PUsername AND Password = @PPassword";
-            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { PUsername = username, PPassword = password});
+            string query = "SELECT * FROM Usuarios WHERE Username = @PUsername";
+            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { PUsername = username });
         }
         return usuario;
-    }  
+    }
+        
     public static bool searchUsername(string username)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Usuarios WHERE Username = @Username";
-            Usuario usuario = connection.QueryFirstOrDefault<Usuario>(query, new { Username = username });
+            string query = "SELECT * FROM Usuarios WHERE Username = @pUsername";
+            Usuario usuario = connection.QueryFirstOrDefault<Usuario>(query, new { pUsername = username });
             return usuario == null;
         }
     }
@@ -78,9 +90,9 @@ public static Tarea returnTareaTit(string titulo)
     }
     return tarea;
 }
-public  static void modifyTarea(Tarea tarea, int IDD)
+public  static void modifyTarea(Tarea tarea, int ID)
 {
-string query = @"UPDATE Tareas SET Titulo = @pTitulo, Descripcion = @pDescripcion, Fecha = @pFecha, Finalizado = @pFinalizado WHERE ID = @IDD";   
+string query = @"UPDATE Tareas SET Titulo = @pTitulo, Descripcion = @pDescripcion, Fecha = @pFecha, Finalizado = @pFinalizado WHERE ID = @pID";   
 using (SqlConnection connection = new SqlConnection(_connectionString))
     {
         connection.Execute(query, new
@@ -89,6 +101,7 @@ using (SqlConnection connection = new SqlConnection(_connectionString))
             pDescripcion = tarea.Descripcion,
             pFecha = tarea.Fecha,
             pFinalizado = tarea.Finalizado,
+            pID = ID
         });
     }
 }

@@ -47,7 +47,7 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult saveSignIn(string nombre, string apellido, string foto, string username, string password)
     {
-        if (!BD.searchUsername(username))
+        if (BD.searchUsername(username))
         {
             ViewBag.message = "El nombre de usuario ya existe.";
             return View("SignIn"); 
@@ -55,7 +55,9 @@ public class AccountController : Controller
         else
         {
             Usuario usuario = new Usuario(nombre, apellido, foto, username, DateTime.Now, password);
-            BD.signIn(usuario);
+            BD.signIn(usuario);        
+            Usuario usuarioGuardado = BD.getUsuarioByUsername(username); 
+            HttpContext.Session.SetString("IdUsuario", usuarioGuardado.ID.ToString());
             return RedirectToAction("showTareas", "Home"); 
         }
     }
