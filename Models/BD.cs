@@ -78,9 +78,9 @@ public static Tarea returnTareaTit(string titulo)
     }
     return tarea;
 }
-public  static void modifyTarea(Tarea tarea)
+public  static void modifyTarea(Tarea tarea, int IDD)
 {
-string query = @"UPDATE Tareas SET Titulo = @pTitulo, Descripcion = @pDescripcion, Fecha = @pFecha, Finalizado = @pFinalizado WHERE ID = @Id";   
+string query = @"UPDATE Tareas SET Titulo = @pTitulo, Descripcion = @pDescripcion, Fecha = @pFecha, Finalizado = @pFinalizado WHERE ID = @IDD";   
 using (SqlConnection connection = new SqlConnection(_connectionString))
     {
         connection.Execute(query, new
@@ -89,7 +89,6 @@ using (SqlConnection connection = new SqlConnection(_connectionString))
             pDescripcion = tarea.Descripcion,
             pFecha = tarea.Fecha,
             pFinalizado = tarea.Finalizado,
-            pId = tarea.ID
         });
     }
 }
