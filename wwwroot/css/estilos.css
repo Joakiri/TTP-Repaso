@@ -1,0 +1,238 @@
+/*
+  estilos.css
+  - Extiende y armoniza los estilos existentes de site.css
+  - Solo CSS nativo, sin frameworks nuevos
+*/
+
+/* Paleta y variables simples mediante custom properties */
+:root {
+  --color-bg-primary: #f7efe7; /* peach/beige suave */
+  --color-bg-accent: #e7f3ff;  /* celeste muy claro */
+  --color-text-primary: #1d1d1f;
+  --color-text-muted: #6b7280;
+  --color-brand: #4f46e5;      /* indigo */
+  --color-brand-2: #ef4444;    /* rojo suave para estados */
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --shadow-soft: 0 6px 22px rgba(0,0,0,.08);
+  --shadow-hover: 0 12px 26px rgba(0,0,0,.12);
+}
+
+/* Tipografía base mejorada */
+html, body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--color-text-primary);
+}
+
+/* Contenedores genéricos con paddings y separación razonable */
+.container-soft {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Botón base que puede usarse en <a> o <button> */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-lg);
+  border: 0;
+  background: var(--color-brand);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .2px;
+  box-shadow: var(--shadow-soft);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn--light {
+  background: #fff;
+  color: var(--color-text-primary);
+  border: 1px solid #e5e7eb;
+}
+.btn--danger {
+  background: var(--color-brand-2);
+}
+
+/* Tarjetas / paneles reutilizables */
+.card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 18px;
+}
+
+/* Formularios consistentes con inputs agradables */
+.form {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  box-shadow: var(--shadow-soft);
+}
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="email"],
+.form input[type="number"],
+.form select,
+.form textarea {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #fff;
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px rgba(79,70,229,.15);
+}
+.form .actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Encabezados armonizados */
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+h1 { font-size: clamp(28px, 4vw, 36px); }
+h2 { font-size: clamp(22px, 3vw, 28px); }
+h3 { font-size: clamp(18px, 2.5vw, 22px); }
+h4 { font-size: clamp(16px, 2vw, 18px); }
+
+/* Secciones específicas ya existentes con un look más limpio */
+.login,
+.signin,
+.newtarea,
+.endTarea,
+.ModifyTarea,
+.ModifyTareaTit,
+.ShowTareas,
+.index,
+.indexOp {
+  background: var(--color-bg-primary);
+}
+
+.login h3,
+.signin h3,
+.newtarea h3,
+.endTarea h3,
+.ModifyTarea h3,
+.ModifyTareaTit h3,
+.ShowTareas h3,
+.index h3,
+.indexOp h3 {
+  color: var(--color-brand);
+  font-weight: 700;
+}
+
+/* Ajustes de contenedor para páginas que usan div central */
+.login div,
+.signin div,
+.newtarea div,
+.endTarea div,
+.ModifyTarea div,
+.ModifyTareaTit div,
+.ShowTareas div,
+.index div,
+.indexOp div {
+  display: flex;
+  justify-content: center;
+}
+
+/* Formularios de páginas (reutilizan .form) */
+.login form,
+.signin form,
+.newtarea form,
+.endTarea form,
+.ModifyTarea form,
+.ModifyTareaTit form {
+  width: min(520px, 90%);
+  margin: 16px auto;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Botones de navegación en listados/acciones reemplazando estilos inline previos */
+.index a,
+.indexOp a,
+a.button-like {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  min-width: 160px;
+  padding: 10px 16px;
+  margin: 10px auto;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.index a:hover,
+.indexOp a:hover,
+a.button-like:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+/* Tarjeta de tareas más legible */
+.ShowTareas div {
+  background: #fff;
+  width: min(720px, 92%);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  margin: 20px auto;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #f0f0f0;
+}
+.ShowTareas p {
+  padding: 8px 0;
+}
+.ShowTareas h4 { color: var(--color-text-muted); }
+
+/* Destacar título de finalización */
+.endTarea h1 {
+  background: linear-gradient(135deg, #34d399, #10b981);
+  color: #fff;
+  width: min(360px, 80%);
+  margin: 18px auto;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Utilidades pequeñas, por si se necesitan */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 8px; }
+.mt-3 { margin-top: 12px; }
+.mt-4 { margin-top: 16px; }
+.mb-2 { margin-bottom: 8px; }
+.mb-3 { margin-bottom: 12px; }
+.mb-4 { margin-bottom: 16px; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+
