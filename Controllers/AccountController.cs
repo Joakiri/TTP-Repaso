@@ -47,7 +47,7 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult saveSignIn(string nombre, string apellido, string foto, string username, string password)
     {
-        if (BD.searchUsername(username))
+        if (!BD.searchUsername(username))
         {
             ViewBag.message = "El nombre de usuario ya existe.";
             return View("SignIn"); 
